@@ -40,7 +40,9 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 3. [ ] `CSS Module`配置 + `Less`
 4. [ ] `svg-sprite-loader`配置([参考](https://www.jianshu.com/p/4a03e297c2f0))
 5. [ ] `vuex`配置
-6. [ ] 搭建目录
+6. [ ] 添加`normalize.css`(跨浏览器的高度一致性)
+7. [ ] 添加`babel-polyfill`(ES6转ES5)
+8. [ ] 搭建目录
 
 # 目录
 * apis - 接口

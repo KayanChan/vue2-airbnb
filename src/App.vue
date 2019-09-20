@@ -9,7 +9,6 @@ export default {
   name: 'App'
 }
 </script>
-
 <style>
 html {
   width: 100%;
@@ -17,8 +16,6 @@ html {
   background-color: #F5F5F5;
 }
 body {
-  margin: 0;
-  padding: 0;
   height: 100%;
 }
 img {
