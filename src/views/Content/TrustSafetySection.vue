@@ -1,6 +1,6 @@
 <template>
   <div class="trust-safety-section">
-    <section-title class="section-title"></section-title>
+    <section-title class="section-title">旅行保障</section-title>
     <ul class="items">
       <li>
         <div class="flag"></div>
@@ -31,31 +31,34 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-  .items {
-    padding: 48px;
-    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 6px;
-    li {
-      display: flex;
-      margin-bottom: 48px;
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-    .flag {
-      margin-right: 40px;
-      width: 64px;
-      height: 64px;
-      background-color: #739397;
-    }
-    .text {
-      width: 454px;
-      line-height: 32px;
-      font-size: 28px;
-      color: #484848;
-    }
-    .highline {
-      font-weight: bold;
+.trust-safety-section {
+  margin-top: 96px;
+}
+.items {
+  padding: 48px;
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  li {
+    display: flex;
+    margin-bottom: 48px;
+    &:last-child {
+      margin-bottom: 0;
     }
   }
+  .flag {
+    margin-right: 40px;
+    width: 64px;
+    height: 64px;
+    background-color: #739397;
+  }
+  .text {
+    width: 454px;
+    line-height: 32px;
+    font-size: 28px;
+    color: #484848;
+  }
+  .highline {
+    font-weight: bold;
+  }
+}
 </style>

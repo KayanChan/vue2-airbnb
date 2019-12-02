@@ -1,6 +1,11 @@
 <template>
   <div class="china-host-promotion">
-    <section-title class="section-title"></section-title>
+    <section-title class="section-title">
+      <div>秋季特惠房源</div>
+      <template v-slot:subTitle>
+        低至8折，可叠加使用礼券
+      </template>
+    </section-title>
     <city-tab></city-tab>
     <div class="house-cards">
       <house-card></house-card>

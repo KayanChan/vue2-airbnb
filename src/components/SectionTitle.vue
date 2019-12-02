@@ -1,7 +1,7 @@
 <template>
   <div class="section-title">
-    <div class="main-title">秋季特惠房源</div>
-    <div class="sub-title">低至8折，可叠加使用礼券</div>
+    <div class="main-title"><slot></slot></div>
+    <div class="sub-title"><slot name="subTitle"></slot></div>
   </div>
 </template>
 <script>

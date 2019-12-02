@@ -1,6 +1,6 @@
 <template>
   <div class="china-host-destination">
-    <section-title class="section-title"></section-title>
+    <section-title class="section-title">国内热门目的地</section-title>
     <city-tab></city-tab>
     <div class="house-cards">
       <house-card></house-card>
@@ -28,6 +28,9 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+.china-host-destination {
+  margin-top: 96px;
+}
 .section-title {
   margin-bottom: 32px;
 }

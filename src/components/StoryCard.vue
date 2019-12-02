@@ -6,8 +6,8 @@
       <span class="sentence">房东说，欢迎体现你的“珠江之夜”</span>
     </div>
     <div class="count">
-      <div class="icon">点赞：3</div>
-      <div class="icon">评论：3</div>
+      <div class="icon"><SvgIcon icon-class="like"></SvgIcon>3</div>
+      <div class="icon"><SvgIcon icon-class="comment"></SvgIcon>3</div>
     </div>
   </div>
 </template>
@@ -40,7 +40,7 @@ export default {
 .count {
   display: flex;
   margin-top: 8px;
-  font-size: 24px;
+  font-size: 28px;
   .icon {
     margin-right: 10px;
   }

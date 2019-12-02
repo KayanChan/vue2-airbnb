@@ -11,11 +11,11 @@
     </div>
     <div class="appraise">
       <div class="stars">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+        <SvgIcon icon-class="green_star"></SvgIcon>
+        <SvgIcon icon-class="green_star"></SvgIcon>
+        <SvgIcon icon-class="green_star"></SvgIcon>
+        <SvgIcon icon-class="green_star"></SvgIcon>
+        <SvgIcon icon-class="green_star"></SvgIcon>
       </div>
       <span class="number">17</span>
     </div>
@@ -67,22 +67,18 @@ export default {
   color: @secondTextColor;
 }
 .appraise {
+  display: flex;
+  align-items: center;
   height: 40px;
   line-height: 40px;
   font-size: 24px;
 }
 .stars {
-  display: inline-block;
-  span {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-color: @functionColor;
-    border-radius: 50%;
-  }
+  display: inline-flex;
+  font-size: 32px;
 }
 .number {
-  display: inline-block;
+  margin-left: 10px;
   font-weight: normal;
 }
 </style>

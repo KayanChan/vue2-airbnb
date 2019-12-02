@@ -1,6 +1,9 @@
 <template>
   <div class="global-homes">
-    <section-title class="section-title"></section-title>
+    <section-title class="section-title">
+      <div>全球热门房源精选</div>
+      <template v-slot:subTitle>精选舒适房源供你挑选</template>
+    </section-title>
     <city-tab></city-tab>
     <div class="house-cards">
       <house-card></house-card>
@@ -29,7 +32,7 @@ export default {
 </script>
 <style lang="less" scoped>
 .global-homes {
-  margin-top: 24px;
+  margin-top: 96px;
 }
 .section-title {
   margin-bottom: 32px;

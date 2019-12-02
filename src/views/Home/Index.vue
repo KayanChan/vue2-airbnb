@@ -82,14 +82,17 @@ export default {
 }
 .language-selector {
   margin: 0 48px 24px 48px;
+  padding-top: 32px;
+  border-style: solid;
+  .ignore-border-top-1px(#EDEDED);
   display: flex;
   justify-content: space-between;
   select {
     padding: 12px 30px;
     width: 320px;
     line-height: 48px;
-    color: #008489;
-    border-color: #008489;
+    color: @primaryTextColor;
+    border-color: #ededed;
     border-radius: 8px;
     font-size: 32px;
     outline: none;
@@ -106,11 +109,12 @@ export default {
     height: 88px;
     line-height: 88px;
     font-size: 28px;
+    color: @primaryTextColor;
   }
 }
 .website-record {
   margin: 0 48px 24px 48px;
-  color: #767676;
+  color: @secondTextColor;
   font-size: 24px;
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
   <div class="home-search">
     <div class="search-input">
-      <span class="icon-search"></span>
-      <span class="placeholder">搜「北京」试试</span>
+      <SvgIcon icon-class="search" class="icon-search"></SvgIcon>
+      <input type="text" placeholder="搜「北京」试试" class="input-ctrl">
     </div>
   </div>
 </template>
@@ -23,21 +23,23 @@ export default {
 }
 .search-input {
   position: relative;
-  padding-left: 96px;
+  display: flex;
+  align-items: center;
+  height: 96px;
   background-color: #FFF;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.01), 0px 3px 18px rgba(0, 0, 0, 0.12);
 }
 .icon-search {
-  position: absolute;
-  left: 32px;
-  top: 32px;
-  width: 32px;
-  height: 32px;
-  background-color: #000;
+  width: 96px;
+  font-size: 56px;
 }
-.placeholder {
+.input-ctrl {
   display: inline-block;
+  width: 558px;
+  line-height: 80px;
   font-size: 28px;
-  color: @grayTextColor;
+  border: none;
+  outline: none;
+  color: @secondTextColor;
 }
 </style>
