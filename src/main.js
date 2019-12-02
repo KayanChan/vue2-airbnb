@@ -4,9 +4,10 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import App from './App'
 import router from './router'
-import '@/icons'
 import 'babel-polyfill'
 import 'normalize.css/normalize.css'
+import '@/utils/components'
+import '@/icons'
 
 Vue.config.productionTip = false
 

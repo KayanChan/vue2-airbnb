@@ -37,7 +37,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 # 前期准备
 1. [ ] 配置`.postcssrc.js`([参考](https://segmentfault.com/a/1190000014185590#articleHeader8))
 2. [ ] 增加`viewport-units-buggyfill`配置，适配了低版本安卓机型
-3. [ ] `CSS Module`配置 + `Less`
+3. [ ] `Less`配置
 4. [ ] `svg-sprite-loader`配置([参考](https://www.jianshu.com/p/4a03e297c2f0))
 5. [ ] `vuex`配置
 6. [ ] 添加`normalize.css`(跨浏览器的高度一致性)
@@ -54,3 +54,8 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 * styles - 样式
 * utils - 工具库
 * views - 页面
+
+# styles
+* `normalize.css`： 样式重置统一
+* `styles/*.less`： 公共样式(UI-Key、工具样式)
+* `<style></style>`: 局部样式

@@ -1,15 +1,12 @@
 <template>
-  <div>
-  </div>
+  <div class="campaign-reminder"></div>
 </template>
 <script>
 export default {
-  name: 'UiKey',
+  // 温馨提示
+  name: 'CampaignReminder',
   data () {
     return {}
   }
 }
 </script>
-<style lang="less">
-
-</style>

@@ -55,31 +55,18 @@ module.exports = {
         test: /\.css$/,
         use: [
           'vue-style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              // 开启 CSS Modules
-              modules: true,
-              // 自定义生成的类名
-              localIdentName: '[local]_[hash:base64:8]'
-            }
-          }
+          'css-loader'
         ],
-        exclude: [resolve('node_modules/normalize.css/normalize.css')]
+        exclude:[path.resolve(__dirname, '..', 'node_modules')]
       },
       {
         test: /\.less$/,
         use: [
           'vue-style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              localIdentName: '[local]_[hash:base64:5]'
-            }
-          },
+          'css-loader',
           'less-loader'
-        ]
+        ],
+        exclude:[path.resolve(__dirname, '..', 'node_modules')]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
