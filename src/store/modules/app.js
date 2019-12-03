@@ -1,32 +1,29 @@
+import { getLanguages, getCurrencies } from '@/apis/home'
 const app = {
   state: {
-    languages: [
-      {
-        id: 'Chinese-Simple',
-        name: '中文简体'
-      },
-      {
-        id: 'Chinese-traditional',
-        name: '中文繁体'
-      },
-      {
-        id: 'English',
-        name: '英语'
-      }
-    ],
-    currencies: [
-      {
-        id: 'CNY',
-        name: 'CNY人民币'
-      },
-      {
-        id: 'USD',
-        name: 'USD美元'
-      }
-    ]
+    languages: [],
+    currencies: []
   },
-  mutations: {},
-  actions: {}
+  mutations: {
+    setLanguages (state, languages) {
+      state.languages = languages
+    },
+    setCurrencies (state, currencies) {
+      state.currencies = currencies
+    }
+  },
+  actions: {
+    getLanguages (context) {
+      getLanguages().then(function (data) {
+        context.commit('setLanguages', data.data)
+      }, err => console.log(err))
+    },
+    getCurrencies (context) {
+      getCurrencies().then(function (data) {
+        context.commit('setCurrencies', data.data)
+      }, err => console.log(err))
+    }
+  }
 }
 
 export default app

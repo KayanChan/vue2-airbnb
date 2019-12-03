@@ -53,6 +53,10 @@ export default {
     currencies () {
       return this.$store.state.app.currencies
     }
+  },
+  mounted () {
+    this.$store.dispatch('getLanguages')
+    this.$store.dispatch('getCurrencies')
   }
 }
 </script>
