@@ -4,8 +4,7 @@
       <div>高分体验</div>
       <template v-slot:subTitle>在下趟旅程中，不妨预订由本地达人组织的体验活动</template>
     </section-title>
-    <city-tab></city-tab>
-    <activity-card></activity-card>
+    <activity-card :activities="qualityActivities"></activity-card>
     <pub-text-btn>查看更多体验</pub-text-btn>
   </div>
 </template>
@@ -22,6 +21,14 @@ export default {
   },
   data () {
     return {}
+  },
+  computed: {
+    qualityActivities () {
+      return this.$store.state.home.qualityActivities
+    }
+  },
+  mounted () {
+    this.$store.dispatch('getQualityActivity')
   }
 }
 </script>

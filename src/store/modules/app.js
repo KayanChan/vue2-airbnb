@@ -1,4 +1,4 @@
-import { getLanguages, getCurrencies } from '@/apis/home'
+import { getLanguages, getCurrencies } from '@/apis/app'
 const app = {
   state: {
     languages: [],

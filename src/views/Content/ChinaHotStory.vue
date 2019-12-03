@@ -1,7 +1,7 @@
 <template>
   <div class="china-hot-story">
     <section-title class="section-title">精选旅游故事</section-title>
-    <story-card></story-card>
+    <story-card :stories="travelStories"></story-card>
     <pub-text-btn>查看更多故事</pub-text-btn>
   </div>
 </template>
@@ -16,6 +16,14 @@ export default {
   },
   data () {
     return {}
+  },
+  computed: {
+    travelStories () {
+      return this.$store.state.home.travelStories
+    }
+  },
+  mounted () {
+    this.$store.dispatch('getTravelStory')
   }
 }
 </script>

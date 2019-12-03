@@ -4,8 +4,7 @@
       <div>全球热门房源精选</div>
       <template v-slot:subTitle>精选舒适房源供你挑选</template>
     </section-title>
-    <city-tab></city-tab>
-    <house-card></house-card>
+    <house-card :houseSources="globalHouses"></house-card>
     <pub-text-btn>查看更多房源</pub-text-btn>
   </div>
 </template>
@@ -23,6 +22,14 @@ export default {
   },
   data () {
     return {}
+  },
+  computed: {
+    globalHouses () {
+      return this.$store.state.home.globalHouses
+    }
+  },
+  mounted () {
+    this.$store.dispatch('getGlobalHouse')
   }
 }
 </script>

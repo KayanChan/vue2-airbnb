@@ -6,8 +6,14 @@
     <span class="sentence">{{storyData.summary}}</span>
   </div>
   <div class="count">
-    <div class="icon"><SvgIcon icon-class="like"></SvgIcon>{{storyData.likeCount}}</div>
-    <div class="icon"><SvgIcon icon-class="comment"></SvgIcon>{{storyData.commentCount}}</div>
+    <div class="icon">
+      <SvgIcon icon-class="like"></SvgIcon>
+      {{storyData.likeCount}}
+    </div>
+    <div class="icon">
+      <SvgIcon icon-class="comment"></SvgIcon>
+      {{storyData.commentCount}}
+    </div>
   </div>
 </div>
 </template>
@@ -49,7 +55,7 @@ export default {
 .count {
   display: flex;
   margin-top: 8px;
-  font-size: 28px;
+  font-size: 24px;
   .icon {
     margin-right: 10px;
   }

@@ -1,8 +1,8 @@
 <template>
   <div class="china-host-destination">
     <section-title class="section-title">国内热门目的地</section-title>
-    <city-tab></city-tab>
-    <house-card></house-card>
+    <city-tab :cities="destinationCities"></city-tab>
+    <house-card :houseSources="destinationHouses"></house-card>
     <pub-text-btn>查看更多成都房源</pub-text-btn>
   </div>
 </template>
@@ -20,6 +20,18 @@ export default {
   },
   data () {
     return {}
+  },
+  computed: {
+    destinationHouses () {
+      return this.$store.state.home.destinationHouses
+    },
+    destinationCities () {
+      return this.$store.state.home.destinationCities
+    }
+  },
+  mounted () {
+    this.$store.dispatch('getDestinationHouse')
+    this.$store.dispatch('getDestinationCity')
   }
 }
 </script>

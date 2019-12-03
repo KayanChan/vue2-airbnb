@@ -45,14 +45,14 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 8. [x] 搭建目录
 
 # 目录
-* [ ] apis - 接口
+* [x] apis - 接口
 * [x] assets - 静态资源
 * [x] components - 组件
 * [x] icons - iconfont
 * [x] router - 路由
-* [ ] store - vuex
+* [x] store - vuex
 * [x] styles - 样式
-* [ ] utils - 工具库
+* [x] utils - 工具库
 * [x] views - 页面
 
 # styles

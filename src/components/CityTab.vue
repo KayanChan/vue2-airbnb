@@ -1,11 +1,12 @@
 <template>
   <div>
     <ul class="city-tab">
-      <li :class="{'active': city.id === currentCityId}"
+      <li :class="{'active': index === currentCityIdx}"
         v-for="(city, index) in cities"
-        v-bind:key="index">
+        v-bind:key="index"
+        @click="currentCityIdx = index">
         <div>{{ city.name }}</div>
-        <div v-if="city.houseSourceCount">{{city.houseSourceCount}}+房源</div>
+        <div v-if="city.houseCount">{{city.houseCount}}+房源</div>
       </li>
     </ul>
   </div>
@@ -13,36 +14,11 @@
 <script>
 export default {
   name: 'CityTab',
+  props: ['cities'],
   data () {
     return {
-      cities: [
-        {
-          id: 'Beijing',
-          name: '北京',
-          cls: 'active'
-        },
-        {
-          id: 'Shanghai',
-          name: '上海'
-        },
-        {
-          id: 'Guangzhou',
-          name: '广州'
-        },
-        {
-          id: 'Shenzhen',
-          name: '深圳'
-        },
-        {
-          id: 'Zhuhai',
-          name: '珠海'
-        }
-      ],
-      currentCityId: ''
+      currentCityIdx: 0
     }
-  },
-  mounted () {
-    this.currentCityId = this.cities[0].id
   }
 }
 </script>

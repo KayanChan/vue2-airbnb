@@ -8,11 +8,12 @@
       </li>
       <li>
         <div class="flag"></div>
-        <div class="text"><span class="highline">安心房源保障</span>人工审核所有中国房源页面信息，入住更放心</div>
+        <div class="text"><span class="highline">专业中文客服</span>
+        (86)400-000-1234、(86)010-6789-1234，24小时服务</div>
       </li>
       <li>
         <div class="flag"></div>
-        <div class="text"><span class="highline">安心房源保障</span>人工审核所有中国房源页面信息，入住更放心</div>
+        <div class="text"><span class="highline">旅游安全保障</span>多重风险控制设计，全方位保障您的行程安全</div>
       </li>
     </ul>
   </div>

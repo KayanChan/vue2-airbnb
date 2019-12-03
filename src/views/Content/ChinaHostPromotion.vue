@@ -6,8 +6,8 @@
         低至8折，可叠加使用礼券
       </template>
     </section-title>
-    <city-tab></city-tab>
-    <house-card></house-card>
+    <city-tab :cities="promotionCities"></city-tab>
+    <house-card :houseSources="promotionHouses"></house-card>
     <pub-text-btn>查看更多北京房源</pub-text-btn>
   </div>
 </template>
@@ -25,6 +25,18 @@ export default {
   },
   data () {
     return {}
+  },
+  computed: {
+    promotionHouses () {
+      return this.$store.state.home.promotionHouses
+    },
+    promotionCities () {
+      return this.$store.state.home.promotionCities
+    }
+  },
+  mounted () {
+    this.$store.dispatch('getPromotionHouse')
+    this.$store.dispatch('getPromotionCity')
   }
 }
 </script>

@@ -10,51 +10,9 @@ export default {
   components: {
     StoryCardItem
   },
+  props: ['stories'],
   data () {
-    return {
-      stories: [
-        {
-          id: 1,
-          city: {
-            id: 'Guangzhou',
-            name: '广州'
-          },
-          summary: '房东说，欢迎体验你的 “珠江之夜”。',
-          likeCount: 37,
-          commentCount: 3
-        },
-        {
-          id: 2,
-          city: {
-            id: 'Taizhou',
-            name: '台州'
-          },
-          summary: '去这家深藏最美渔村的海边石墅 赏一场不容错过的东海日出！',
-          likeCount: 65,
-          commentCount: 2
-        },
-        {
-          id: 3,
-          city: {
-            id: 'Bangkok',
-            name: '曼谷'
-          },
-          summary: '曼谷有座四合院，隐秘又惊艳',
-          likeCount: 63,
-          commentCount: 4
-        },
-        {
-          id: 4,
-          city: {
-            id: 'Waxford',
-            name: '威克斯福德'
-          },
-          summary: '为了体验地道的爱尔兰乡村风情，我竟然住进城堡马厩！',
-          likeCount: 19,
-          commentCount: 0
-        }
-      ]
-    }
+    return {}
   }
 }
 </script>
