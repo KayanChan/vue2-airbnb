@@ -5,16 +5,12 @@
     <home-banner></home-banner>
     <home-search></home-search>
     <home-content></home-content>
-    <div class="language-selector">
+    <div class="selector">
       <select>
-        <option value="A">中文(简体)</option>
-        <option value="B">中文(繁体)</option>
-        <option value="C">中文(简体)</option>
+        <option v-for="language in languages" :key="language.id" :value="language.id">{{language.name}}</option>
       </select>
       <select>
-        <option value="A">CNY人民币</option>
-        <option value="B">USD美元</option>
-        <option value="C">JPY日元</option>
+        <option v-for="currency in currencies" :key="currency.id" :value="currency.id">{{currency.name}}</option>
       </select>
     </div>
     <ul class="routine-link">
@@ -49,6 +45,14 @@ export default {
       imgLogo: imgLogo,
       imgUser: imgUser
     }
+  },
+  computed: {
+    languages () {
+      return this.$store.state.app.languages
+    },
+    currencies () {
+      return this.$store.state.app.currencies
+    }
   }
 }
 </script>
@@ -80,7 +84,7 @@ export default {
   .ignore-border-1px(#FFF);
   .img
 }
-.language-selector {
+.selector {
   margin: 0 48px 24px 48px;
   padding-top: 32px;
   border-style: solid;
