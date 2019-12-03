@@ -1,84 +1,75 @@
 <template>
-  <div class="home-card">
-    <div class="picture">
-      <!-- <img src="https://fakeimg.pl/600x400/333/EEE/" alt=""> -->
-    </div>
-    <div class="attr">整栋平房 · 1室1卫1床</div>
-    <div class="summary">住进老北京•二环东四老城区胡同/LOFT/5号线张自忠路/近簋街/南锣鼓巷/后海/鼓楼/三里屯/工体</div>
-    <div class="price">
-      <span class="real-price">￥201</span>
-      <span class="original-price">￥291每晚</span>
-    </div>
-    <div class="appraise">
-      <div class="stars">
-        <SvgIcon icon-class="green_star"></SvgIcon>
-        <SvgIcon icon-class="green_star"></SvgIcon>
-        <SvgIcon icon-class="green_star"></SvgIcon>
-        <SvgIcon icon-class="green_star"></SvgIcon>
-        <SvgIcon icon-class="green_star"></SvgIcon>
-      </div>
-      <span class="number">17</span>
-    </div>
+  <div class="house-cards">
+    <house-card-item v-for="(house, index) in houseSources" v-bind:key="index" :houseData="house"></house-card-item>
   </div>
 </template>
 <script>
+import houseCardItem from '@/components/HouseCardItem'
 export default {
   name: 'HouseCard',
+  components: {
+    houseCardItem
+  },
   data () {
-    return {}
+    return {
+      houseSources: [
+        {
+          id: 0,
+          typeId: 'apartment',
+          roomCount: 1,
+          bathroomCount: 1,
+          bedCount: 1,
+          desc: 'room3厦大沙坡尾大学路正街独立卫生间',
+          realPrice: 89,
+          originPrice: 99,
+          star: 6,
+          isPlusChecked: true
+        },
+        {
+          id: 1,
+          typeId: 'room',
+          roomCount: 1,
+          bathroomCount: 1,
+          bedCount: 1,
+          desc: '《壹所设计》全新ins/近厦大/曾厝安/环岛路/白城沙滩/投影大床',
+          realPrice: 134,
+          originPrice: 149,
+          star: 148,
+          isPlusChecked: false
+        },
+        {
+          id: 2,
+          typeId: 'loft',
+          roomCount: 0,
+          bathroomCount: 1.5,
+          bedCount: 1,
+          desc: '泡泡椅(投影仪)一线无遮挡海景房',
+          realPrice: 178,
+          originPrice: 189,
+          star: 11,
+          isPlusChecked: false
+        },
+        {
+          id: 3,
+          typeId: 'apartment',
+          roomCount: 1,
+          bathroomCount: 1.5,
+          bedCount: 1,
+          desc: '鼓浪屿,厦大,中山路,体育中心旁单身公寓,大浴缸➕投影房 莲坂地铁口100米特价房',
+          realPrice: 159,
+          originPrice: 199,
+          star: 13,
+          isPlusChecked: false
+        }
+      ]
+    }
   }
 }
 </script>
 <style lang="less" scoped>
-.home-card {
-  margin-bottom: 48px;
-  width: 319px;
-  font-weight: 700;
-}
-.picture {
-  width: 319px;
-  height: 212px;
-  background-color: #739397;
-  img {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-  }
-}
-.attr {
-  margin: 16px 0 4px 0;
-  width: 100%;
-  height: 26px;
-  color: @primaryTextColor;
-  font-size: 24px;
-}
-.summary {
-  margin-bottom: 4px;
-  width: 100%;
-  line-height: 34px;
-  font-size: 28px;
-  .texts-ellipsis
-}
-.price {
-  font-size: 24px;
-}
-.original-price {
-  text-decoration: line-through;
-  color: @secondTextColor;
-}
-.appraise {
+.house-cards {
   display: flex;
-  align-items: center;
-  height: 40px;
-  line-height: 40px;
-  font-size: 24px;
-}
-.stars {
-  display: inline-flex;
-  font-size: 32px;
-}
-.number {
-  margin-left: 10px;
-  font-weight: normal;
+  justify-content: space-between;
+  flex-wrap: wrap
 }
 </style>

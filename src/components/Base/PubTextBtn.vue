@@ -1,5 +1,5 @@
 <template>
-  <div class="pub-text-btn">显示更多北京的房源</div>
+  <div class="pub-text-btn"><slot></slot></div>
 </template>
 <script>
 export default {

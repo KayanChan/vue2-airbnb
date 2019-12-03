@@ -1,11 +1,12 @@
 <template>
   <div>
     <ul class="city-tab">
-      <li class="active">北京</li>
-      <li>上海</li>
-      <li>广州</li>
-      <li>深圳</li>
-      <li>珠海</li>
+      <li :class="{'active': city.id === currentCityId}"
+        v-for="(city, index) in cities"
+        v-bind:key="index">
+        <div>{{ city.name }}</div>
+        <div v-if="city.houseSourceCount">{{city.houseSourceCount}}+房源</div>
+      </li>
     </ul>
   </div>
 </template>
@@ -13,22 +14,50 @@
 export default {
   name: 'CityTab',
   data () {
-    return {}
+    return {
+      cities: [
+        {
+          id: 'Beijing',
+          name: '北京',
+          cls: 'active'
+        },
+        {
+          id: 'Shanghai',
+          name: '上海'
+        },
+        {
+          id: 'Guangzhou',
+          name: '广州'
+        },
+        {
+          id: 'Shenzhen',
+          name: '深圳'
+        },
+        {
+          id: 'Zhuhai',
+          name: '珠海'
+        }
+      ],
+      currentCityId: ''
+    }
+  },
+  mounted () {
+    this.currentCityId = this.cities[0].id
   }
 }
 </script>
 <style lang="less" scoped>
 .city-tab {
-  height: 124px;
+  margin-bottom: 28px;
   white-space: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   li {
     display: inline-block;
+    margin: 0 8px;
     padding: 28px;
     min-width: 88px;
-    height: 40px;
     line-height: 40px;
     border: none;
     outline: none;
@@ -41,6 +70,10 @@ export default {
     font-weight: 700;
     .ignore-border-radius(6px);
     .ignore-border-1px(#D8D8D8);
+
+    &:first-child {
+      margin-left: 0;
+    }
   }
   .active {
     color: #FFF;

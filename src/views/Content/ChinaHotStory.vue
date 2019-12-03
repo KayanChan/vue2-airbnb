@@ -1,11 +1,8 @@
 <template>
   <div class="china-hot-story">
-     <section-title class="section-title">精选旅游故事</section-title>
-     <div class="story-cards">
-       <story-card></story-card>
-       <story-card></story-card>
-     </div>
-     <pub-text-btn></pub-text-btn>
+    <section-title class="section-title">精选旅游故事</section-title>
+    <story-card></story-card>
+    <pub-text-btn>查看更多故事</pub-text-btn>
   </div>
 </template>
 <script>
@@ -25,10 +22,6 @@ export default {
 <style lang="less" scoped>
 .china-hot-story {
   margin-top: 96px;
-}
-.story-cards {
-  display: flex;
-  justify-content: space-between;
 }
 .section-title {
   margin-bottom: 32px;

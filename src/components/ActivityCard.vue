@@ -1,81 +1,73 @@
 <template>
-  <div class="activity-card">
-    <div class="picture">
-      <!-- <img src="https://fakeimg.pl/600x400/333/EEE/" alt=""> -->
-    </div>
-    <div class="country">意大利</div>
-    <div class="summary">Learn to Row as a Venetian</div>
-    <div class="price">
-      <span class="real-price">每人￥201</span>
-    </div>
-    <div class="appraise">
-      <div class="stars">
-        <SvgIcon icon-class="green_star"></SvgIcon>
-        <SvgIcon icon-class="green_star"></SvgIcon>
-        <SvgIcon icon-class="green_star"></SvgIcon>
-        <SvgIcon icon-class="green_star"></SvgIcon>
-        <SvgIcon icon-class="green_star"></SvgIcon>
-      </div>
-      <span class="number">(17)</span>
-    </div>
-  </div>
+<div class="activity-cards">
+  <activity-card-item
+    v-for="(activity, index) in activities" v-bind:key="index"
+    :activityData="activity"></activity-card-item>
+</div>
 </template>
 <script>
+import ActivityCardItem from '@/components/ActivityCardItem'
 export default {
   name: 'ActivityCard',
+  components: {
+    ActivityCardItem
+  },
   data () {
-    return {}
+    return {
+      activities: [
+        {
+          id: 0,
+          country: {
+            id: 'Germany',
+            name: '德国'
+          },
+          introduce: 'Dogs Go Green - Walk with the Pack',
+          price: 439,
+          score: 4.99,
+          star: 101
+        },
+        {
+          id: 1,
+          country: {
+            id: 'Italy',
+            name: '意大利'
+          },
+          introduce: 'The Secrets of Parmigiano Reggiano',
+          price: 639,
+          score: 4.98,
+          star: 806
+        },
+        {
+          id: 2,
+          country: {
+            id: 'Indonesia',
+            name: '印度尼西亚'
+          },
+          introduce: 'Bali Healer and Holy Bathing Tour',
+          price: 4496,
+          score: 4.95,
+          star: 334
+        },
+        {
+          id: 3,
+          country: {
+            id: 'Japan',
+            name: '日本'
+          },
+          introduce: 'Feeling Samurai Soul',
+          price: 629,
+          score: 4.99,
+          star: 1000
+        }
+      ]
+    }
   }
 }
 </script>
 <style lang="less" scoped>
-.activity-card {
-  margin-bottom: 48px;
-  width: 319px;
-  font-weight: 700;
-}
-.picture {
-  width: 319px;
-  height: 212px;
-  background-color: #739397;
-  img {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-  }
-}
-.country {
-  margin: 16px 0 4px 0;
-  width: 100%;
-  height: 26px;
-  color: @primaryTextColor;
-  font-size: 24px;
-}
-.summary {
-  margin-bottom: 4px;
-  width: 100%;
-  line-height: 34px;
-  font-size: 28px;
-  .texts-ellipsis
-}
-.price {
-  margin-bottom: 4px;
-  font-size: 24px;
-  color: #7e7e7e;
-}
-.appraise {
+.activity-cards {
   display: flex;
-  align-items: center;
-  height: 40px;
-  line-height: 40px;
-  font-size: 24px;
-}
-.stars {
-  display: inline-flex;
-  font-size: 28px;
-}
-.number {
-  font-weight: normal;
-  color: #7e7e7e;
+  justify-content: space-between;
+  flex-wrap: wrap
 }
 </style>

@@ -35,6 +35,7 @@ export default {
   margin-top: 96px;
 }
 .items {
+  margin-top: 32px;
   padding: 48px;
   box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.1);
   border-radius: 6px;

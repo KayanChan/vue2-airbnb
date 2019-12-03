@@ -2,12 +2,8 @@
   <div class="china-host-destination">
     <section-title class="section-title">国内热门目的地</section-title>
     <city-tab></city-tab>
-    <div class="house-cards">
-      <house-card></house-card>
-      <house-card></house-card>
-      <house-card></house-card>
-    </div>
-    <pub-text-btn></pub-text-btn>
+    <house-card></house-card>
+    <pub-text-btn>查看更多成都房源</pub-text-btn>
   </div>
 </template>
 <script>
@@ -33,10 +29,5 @@ export default {
 }
 .section-title {
   margin-bottom: 32px;
-}
-.house-cards {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap
 }
 </style>

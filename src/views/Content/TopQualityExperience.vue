@@ -5,12 +5,8 @@
       <template v-slot:subTitle>在下趟旅程中，不妨预订由本地达人组织的体验活动</template>
     </section-title>
     <city-tab></city-tab>
-    <div class="activity-cards">
-      <activity-card></activity-card>
-      <activity-card></activity-card>
-      <activity-card></activity-card>
-    </div>
-    <pub-text-btn></pub-text-btn>
+    <activity-card></activity-card>
+    <pub-text-btn>查看更多体验</pub-text-btn>
   </div>
 </template>
 <script>
@@ -35,10 +31,5 @@ export default {
 }
 .section-title {
   margin-bottom: 32px;
-}
-.activity-cards {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap
 }
 </style>

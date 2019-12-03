@@ -35,25 +35,25 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 * 使用vw实现移动端适配
 
 # 前期准备
-1. [ ] 配置`.postcssrc.js`([参考](https://segmentfault.com/a/1190000014185590#articleHeader8))
-2. [ ] 增加`viewport-units-buggyfill`配置，适配了低版本安卓机型
-3. [ ] `Less`配置
-4. [ ] `svg-sprite-loader`配置([参考](https://www.jianshu.com/p/4a03e297c2f0))
-5. [ ] `vuex`配置
-6. [ ] 添加`normalize.css`(跨浏览器的高度一致性)
-7. [ ] 添加`babel-polyfill`(ES6转ES5)
-8. [ ] 搭建目录
+1. [x] 配置`.postcssrc.js`([参考](https://segmentfault.com/a/1190000014185590#articleHeader8))
+2. [x] 增加`viewport-units-buggyfill`配置，适配了低版本安卓机型
+3. [x] `Less`配置
+4. [x] `svg-sprite-loader`配置([参考](https://www.jianshu.com/p/4a03e297c2f0))
+5. [x] `vuex`配置
+6. [x] 添加`normalize.css`(跨浏览器的高度一致性)
+7. [x] 添加`babel-polyfill`(ES6转ES5)
+8. [x] 搭建目录
 
 # 目录
-* apis - 接口
-* assets - 静态资源
-* components - 组件
-* icons - iconfont
-* router - 路由
-* store - vuex
-* styles - 样式
-* utils - 工具库
-* views - 页面
+* [ ] apis - 接口
+* [x] assets - 静态资源
+* [x] components - 组件
+* [x] icons - iconfont
+* [x] router - 路由
+* [ ] store - vuex
+* [x] styles - 样式
+* [ ] utils - 工具库
+* [x] views - 页面
 
 # styles
 * `normalize.css`： 样式重置统一
