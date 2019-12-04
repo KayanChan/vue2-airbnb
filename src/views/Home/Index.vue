@@ -1,9 +1,13 @@
 <template>
-  <div class="home-index">
+  <div class="home-index" :class="{'show-site-content': isShowSiteContent}">
+    <div class="site-content" v-show="isShowSiteContent">
+      <div class="content-mask" @click="isShowSiteContent = false"></div>
+      <div class="main-content"></div>
+    </div>
     <div class="img-logo"><img class="img" v-bind:src="imgLogo" alt="" /></div>
-    <div class="img-user"><img class="img" v-bind:src="imgUser" alt="" /></div>
+    <div class="img-user" @click="isShowSiteContent = !isShowSiteContent"><img class="img" v-bind:src="imgUser" alt="" /></div>
     <home-banner></home-banner>
-    <home-search></home-search>
+    <home-search :isSearchInputFixed="isSearchInputFixed"></home-search>
     <home-content></home-content>
     <div class="selector">
       <select>
@@ -15,7 +19,7 @@
     </div>
     <ul class="routine-link">
       <li>注册/登录</li>
-      <li>下载应用</li>
+      <li></li>
       <li>帮助</li>
       <li>网站地图</li>
       <li>条款</li>
@@ -43,7 +47,10 @@ export default {
   data () {
     return {
       imgLogo: imgLogo,
-      imgUser: imgUser
+      imgUser: imgUser,
+      isShowSiteContent: false,
+      searchInputOffsetTop: 0,
+      isSearchInputFixed: false
     }
   },
   computed: {
@@ -57,6 +64,20 @@ export default {
   mounted () {
     this.$store.dispatch('getLanguages')
     this.$store.dispatch('getCurrencies')
+    this.searchInputOffsetTop = document.getElementsByClassName('search-input-wrapper')[0].offsetTop
+  },
+  created () {
+    let _this = this
+    window.addEventListener('scroll', () => {
+      let scrollTop = document.documentElement.scrollTop ||
+                      document.body.scrollTop ||
+                      document.querySelector('.home-index').scrollTop
+      if (_this.searchInputOffsetTop && _this.searchInputOffsetTop <= scrollTop) {
+        _this.isSearchInputFixed = true
+      } else {
+        _this.isSearchInputFixed = false
+      }
+    }, true)
   }
 }
 </script>
@@ -67,6 +88,28 @@ export default {
   padding-bottom: 112px;
   width: 100%;
   min-height: 100%;
+}
+.show-site-content {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.site-content {
+  position: fixed;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  .content-mask {
+    width: 25%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.58);
+  }
+  .main-content {
+    width: 75%;
+    height: 100%;
+    background-color: #FFF;
+  }
 }
 .img {
   width: 64px;
