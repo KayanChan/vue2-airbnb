@@ -2,9 +2,13 @@
   <div class="home-index" :class="{'show-site-content': isShowSiteContent}">
     <div class="site-content" v-show="isShowSiteContent">
       <div class="content-mask" @click="isShowSiteContent = false"></div>
-      <div class="main-content"></div>
+      <div class="main-content">
+        <home-side-content></home-side-content>
+      </div>
     </div>
-    <div class="img-logo"><img class="img" v-bind:src="imgLogo" alt="" /></div>
+    <div class="img-logo">
+      <!-- <img class="img" v-bind:src="imgLogo" alt="" /> -->
+    </div>
     <div class="img-user" @click="isShowSiteContent = !isShowSiteContent"><img class="img" v-bind:src="imgUser" alt="" /></div>
     <home-banner></home-banner>
     <home-search :isSearchInputFixed="isSearchInputFixed"></home-search>
@@ -36,13 +40,15 @@ import HomeBanner from '@/views/Home/Banner'
 import HomeSearch from '@/views/Home/Search'
 import HomeContent from '@/views/Home/Content'
 import HomeFooter from '@/views/Home/Footer'
+import HomeSideContent from '@/views/Home/SideContent'
 export default {
   name: 'Home',
   components: {
     HomeBanner,
     HomeSearch,
     HomeContent,
-    HomeFooter
+    HomeFooter,
+    HomeSideContent
   },
   data () {
     return {
@@ -120,6 +126,7 @@ export default {
   position: absolute;
   left: 64px;
   top: 64px;
+  background-color: #ff5a5f;
   .img
 }
 .img-user {
