@@ -22,12 +22,12 @@
       </select>
     </div>
     <ul class="routine-link">
-      <li>注册/登录</li>
+      <li @click="goAuth">注册/登录</li>
       <li></li>
-      <li>帮助</li>
-      <li>网站地图</li>
-      <li>条款</li>
-      <li>隐私政策</li>
+      <li @click="goHelp">帮助</li>
+      <li @click="goSitemap">网站地图</li>
+      <li @click="goTerms">条款</li>
+      <li @click="goPrivacyPolicy">隐私政策</li>
     </ul>
     <div class="website-record">备案信息备案信息备案信息备案信息备案信息备案信息备案信息备案信息</div>
     <home-footer></home-footer>
@@ -84,6 +84,26 @@ export default {
         _this.isSearchInputFixed = false
       }
     }, true)
+  },
+  destroyed () {
+    window.removeEventListener('scroll', function () {}, false)
+  },
+  methods: {
+    goAuth: function () {
+      this.$router.push({path: '/auth'})
+    },
+    goHelp: function () {
+      this.$router.push({path: '/help'})
+    },
+    goSitemap: function () {
+      this.$router.push({path: '/sitemap'})
+    },
+    goTerms: function () {
+      this.$router.push({path: '/terms'})
+    },
+    goPrivacyPolicy: function () {
+      this.$router.push({path: '/privacyPolicy'})
+    }
   }
 }
 </script>

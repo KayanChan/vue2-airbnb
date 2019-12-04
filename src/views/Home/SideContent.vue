@@ -1,7 +1,7 @@
 <template>
   <div class="side-content-wrapper">
     <div class="user-login">
-      <div class="login">注册/登录</div>
+      <router-link class="login" to="/auth">注册/登录</router-link>
       <img class="avatar" src="https://z1.muscache.cn/pictures/f904acba-6811-4d87-be3e-4656a3423135.jpg" alt="">
     </div>
     <ul class="actions">
@@ -38,6 +38,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   .login {
+    text-decoration: none;
     font-size: 28px;
     color: @functionColor;
   }
