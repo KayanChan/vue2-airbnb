@@ -6,11 +6,11 @@
         <home-side-content></home-side-content>
       </div>
     </div>
+    <home-banner></home-banner>
     <div class="img-logo">
       <!-- <img class="img" v-bind:src="imgLogo" alt="" /> -->
     </div>
     <div class="img-user" @click="isShowSiteContent = !isShowSiteContent"><img class="img" v-bind:src="imgUser" alt="" /></div>
-    <home-banner></home-banner>
     <home-search :isSearchInputFixed="isSearchInputFixed"></home-search>
     <home-content></home-content>
     <div class="selector">
@@ -140,7 +140,7 @@ export default {
 .img {
   width: 64px;
   height: 64px;
-  z-index: 99;
+  z-index: 1;
 }
 .img-logo {
   position: absolute;

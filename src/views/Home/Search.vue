@@ -19,9 +19,11 @@ export default {
 </script>
 <style lang="less" scoped>
 .home-search {
+  position: relative;
   margin: -48px auto 0 auto;
   height: 96px;
   line-height: 96px;
+  z-index: 1;
 }
 .search-input-wrapper {
   padding: 0 48px;
