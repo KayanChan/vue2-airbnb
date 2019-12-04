@@ -4,7 +4,7 @@
       <li :class="{'active': index === currentCityIdx}"
         v-for="(city, index) in cities"
         v-bind:key="index"
-        @click="currentCityIdx = index">
+        @click="cityClick(index)">
         <div>{{ city.name }}</div>
         <div v-if="city.houseCount">{{city.houseCount}}+房源</div>
       </li>
@@ -18,6 +18,17 @@ export default {
   data () {
     return {
       currentCityIdx: 0
+    }
+  },
+  watch: {
+    cities () {
+      this.cityClick(this.currentCityIdx)
+    }
+  },
+  methods: {
+    cityClick: function (index) {
+      this.currentCityIdx = index
+      this.$emit('listenCurrentCityData', this.cities[index])
     }
   }
 }

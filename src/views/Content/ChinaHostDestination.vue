@@ -1,9 +1,9 @@
 <template>
   <div class="china-host-destination">
     <section-title class="section-title">国内热门目的地</section-title>
-    <city-tab :cities="destinationCities"></city-tab>
+    <city-tab :cities="destinationCities" v-on:listenCurrentCityData="getCurrentCityData"></city-tab>
     <house-card :houseSources="destinationHouses"></house-card>
-    <pub-text-btn>查看更多成都房源</pub-text-btn>
+    <pub-text-btn>查看更多{{currentCityName}}房源</pub-text-btn>
   </div>
 </template>
 <script>
@@ -19,7 +19,9 @@ export default {
     HouseCard
   },
   data () {
-    return {}
+    return {
+      currentCityData: {}
+    }
   },
   computed: {
     destinationHouses () {
@@ -27,11 +29,19 @@ export default {
     },
     destinationCities () {
       return this.$store.state.home.destinationCities
+    },
+    currentCityName () {
+      return this.currentCityData.name || ''
     }
   },
   mounted () {
     this.$store.dispatch('getDestinationHouse')
     this.$store.dispatch('getDestinationCity')
+  },
+  methods: {
+    getCurrentCityData: function (cityData) {
+      this.currentCityData = cityData
+    }
   }
 }
 </script>

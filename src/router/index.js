@@ -11,13 +11,15 @@ export default new Router({
     },
     {
       path: '/home',
-      name: 'Home',
-      component: resolve => require(['@/views/Home/Index.vue'], resolve)
+      name: 'home',
+      // component: resolve => require(['@/views/Home/Index.vue'], resolve)
+      component: () => import(/* webpackChunkName: home */'@/views/Home/Index.vue')
     },
     {
       path: '/uikey',
-      name: 'UiKey',
-      component: resolve => require(['@/views/UiKey/Index.vue'], resolve)
+      name: 'uikey',
+      // component: resolve => require(['@/views/UiKey/Index.vue'], resolve)
+      component: () => import(/* webpackChunkName: uikey */'@/views/UiKey/Index.vue')
     }
   ]
 })

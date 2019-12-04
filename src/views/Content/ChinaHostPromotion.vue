@@ -6,9 +6,9 @@
         低至8折，可叠加使用礼券
       </template>
     </section-title>
-    <city-tab :cities="promotionCities"></city-tab>
+    <city-tab :cities="promotionCities" v-on:listenCurrentCityData="getCurrentCityData"></city-tab>
     <house-card :houseSources="promotionHouses"></house-card>
-    <pub-text-btn>查看更多北京房源</pub-text-btn>
+    <pub-text-btn>查看更多{{currentCityName}}房源</pub-text-btn>
   </div>
 </template>
 <script>
@@ -24,7 +24,9 @@ export default {
     HouseCard
   },
   data () {
-    return {}
+    return {
+      currentCityData: {}
+    }
   },
   computed: {
     promotionHouses () {
@@ -32,11 +34,19 @@ export default {
     },
     promotionCities () {
       return this.$store.state.home.promotionCities
+    },
+    currentCityName () {
+      return this.currentCityData.name || ''
     }
   },
   mounted () {
     this.$store.dispatch('getPromotionHouse')
     this.$store.dispatch('getPromotionCity')
+  },
+  methods: {
+    getCurrentCityData: function (cityData) {
+      this.currentCityData = cityData
+    }
   }
 }
 </script>

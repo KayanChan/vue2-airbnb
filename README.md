@@ -59,3 +59,9 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 * `normalize.css`： 样式重置统一
 * `styles/*.less`： 公共样式(UI-Key、工具样式)
 * `<style></style>`: 局部样式
+
+# component
+* [slot插槽分发内容](https://cn.vuejs.org/v2/guide/components.html#%E9%80%9A%E8%BF%87%E6%8F%92%E6%A7%BD%E5%88%86%E5%8F%91%E5%86%85%E5%AE%B9): 向一个组件传递内容
+* 父组件给子组件传值：子组件创建`props`接受父组件传递过来的值； 父组件使用子组件的时候，绑定变量传值
+* 子组件给父组件传值：父组件使用子组件的时候，绑定监听事件；子组件值发生改变，通过`this.$emit`事件通知父组件
+* 子组件**不可以**直接修改父组件传递过来`props`的变量的值
