@@ -29,7 +29,7 @@ export default {
       let _this = this
       _this.timer = setInterval(function () {
         _this.widthPercent += 10
-        if (_this.widthPercent > 100) {
+        if (!(_this.widthPercent <= 100)) {
           clearInterval(_this.timer)
           _this.widthPercent = 10
           _this.currentPointIndex++
@@ -37,6 +37,7 @@ export default {
             _this.currentPointIndex = 0
           }
         }
+        // console.log(_this.widthPercent)
       }, 1000)
     }
   }

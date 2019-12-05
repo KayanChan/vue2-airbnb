@@ -4,10 +4,11 @@
       <swiper-slide v-for="(img, index) in bannerImgs" :key="index">
         <div class="banner-img" :style="{'background-image': `url(${img})`}"></div>
       </swiper-slide>
+      <!-- <div class="swiper-pagination" slot="pagination"></div> -->
     </swiper>
-    <div class="banner-points">
+    <!-- <div class="banner-points">
       <banner-point></banner-point>
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
@@ -27,6 +28,7 @@ export default {
     swiperSlide
   },
   data () {
+    // const _that = this
     return {
       bannerImgs: [
         banner1,
@@ -35,10 +37,31 @@ export default {
         banner4,
         banner5
       ],
+      count: 0,
       swiperOption: {
-        autoplay: true,
-        speed: 10000,
-        loop: true
+        autoplay: {
+          delay: 10000
+        },
+        speed: 1000,
+        loop: false,
+        freeModeSticky: true,
+        disableOnInteraction: false,
+        // pagination: {
+        //   el: '.swiper-pagination'
+        // },
+        on: {
+          // slideChangeTransitionStart: function () {
+          //   console.log('===============')
+          //   console.log(this.activeIndex)
+          //   console.log('===============')
+          // },
+          // autoplayStart: function () {
+          //   setInterval(function () {
+          //     _that.count++
+          //     console.log(_that.count % 10)
+          //   }, 1000)
+          // }
+        }
       }
     }
   },
@@ -52,6 +75,15 @@ export default {
     // 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
     console.log('this is current swiper instance object', this.swiper)
     // this.swiper.slideTo(3, 1000, false)
+  },
+  methods: {
+    counter () {
+      const _that = this
+      setInterval(function () {
+        _that.count++
+        console.log(_that.count)
+      }, 1000)
+    }
   }
 }
 </script>

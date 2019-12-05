@@ -1,10 +1,13 @@
 <template>
-  <div class="home-index" :class="{'show-site-content': isShowSiteContent}">
+  <div class="home-index" :class="{'show-site-content': isShowSiteContent || isSettingFixed}">
     <div class="site-content" v-show="isShowSiteContent">
       <div class="content-mask" @click="isShowSiteContent = false"></div>
       <div class="main-content">
-        <home-side-content></home-side-content>
+        <home-side-content v-on:listenSettingClick="isSettingFixed = true"></home-side-content>
       </div>
+    </div>
+    <div class="site-content" v-show="isSettingFixed">
+      <home-side-setting v-on:listenSettingClose="isSettingFixed = false"></home-side-setting>
     </div>
     <home-banner></home-banner>
     <div class="img-logo">
@@ -41,6 +44,7 @@ import HomeSearch from '@/views/Home/Search'
 import HomeContent from '@/views/Home/Content'
 import HomeFooter from '@/views/Home/Footer'
 import HomeSideContent from '@/views/Home/SideContent'
+import HomeSideSetting from '@/views/Home/SideSetting'
 export default {
   name: 'Home',
   components: {
@@ -48,7 +52,8 @@ export default {
     HomeSearch,
     HomeContent,
     HomeFooter,
-    HomeSideContent
+    HomeSideContent,
+    HomeSideSetting
   },
   data () {
     return {
@@ -56,7 +61,8 @@ export default {
       imgUser: imgUser,
       isShowSiteContent: false,
       searchInputOffsetTop: 0,
-      isSearchInputFixed: false
+      isSearchInputFixed: false,
+      isSettingFixed: false
     }
   },
   computed: {

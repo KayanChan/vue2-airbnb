@@ -9,11 +9,11 @@
         <div class="icon"></div>
         <div class="text">下载APP</div>
       </li>
-      <li>
+      <li @click="handleClickSetting">
         <div class="icon"></div>
         <div class="text">语言与货币</div>
       </li>
-      <li>
+      <li @click="goHelp">
         <div class="icon"></div>
         <div class="text">帮助</div>
       </li>
@@ -25,6 +25,14 @@ export default {
   name: 'HomeSideContent',
   data () {
     return {}
+  },
+  methods: {
+    handleClickSetting: function () {
+      this.$emit('listenSettingClick')
+    },
+    goHelp: function () {
+      this.$router.push({path: '/help'})
+    }
   }
 }
 </script>

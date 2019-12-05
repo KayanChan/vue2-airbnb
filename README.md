@@ -65,3 +65,6 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 * 父组件给子组件传值：子组件创建`props`接受父组件传递过来的值； 父组件使用子组件的时候，绑定变量传值
 * 子组件给父组件传值：父组件使用子组件的时候，绑定监听事件；子组件值发生改变，通过`this.$emit`事件通知父组件
 * 子组件**不可以**直接修改父组件传递过来`props`的变量的值
+
+# 困难
+* [ ] 含单个进度条的分页器与图片滚动的时间对不上
