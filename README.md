@@ -1,7 +1,10 @@
 # vue2-airbnb
 
-> 仿[爱彼迎](https://www.airbnb.cn/)的`Vue`项目
-> 基于 vue2 + webpack + vueRouter
+仿[爱彼迎](https://www.airbnb.cn/)的`Vue`项目
+
+基于 vue2 + webpack + vueRouter
+
+[在线效果](https://kayanchan.github.io/project-display/vue2-airbnb/#/home)
 
 ## Build Setup
 
